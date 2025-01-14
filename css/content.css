@@ -1,0 +1,191 @@
+.inline {
+    display : inline;
+}
+
+.link {
+    text-decoration : underline;
+}
+
+.link:hover {
+    text-decoration : none;
+    text-shadow     : var(--link-glow);
+}
+
+.badge {
+    display : inline-block;
+
+    position : relative;
+
+    width  : 88px;
+    height : 31px;
+
+    padding : 0px;
+    margin  : 0px 0px 8px 8px;
+
+    overflow : visible;
+
+    border : 1px solid transparent;
+
+    transition : all var(--trans-time);
+}
+
+.badge:hover {
+    border     : var(--border);
+    box-shadow : var(--glow);
+}
+
+.badge:after {
+    position : absolute;
+
+    width  : 0%;
+    height : 0%;
+
+    top  : 50%;
+    left : 50%;
+
+    opacity : 0;
+
+    transition : all var(--trans-time);
+
+    content : "";
+}
+
+.badge:hover:after {
+    top  : -3.75pt;
+    left : -3.75pt;
+
+    width  : calc(100% + 7.5pt);
+    height : calc(100% + 7.5pt);
+
+    opacity : 1;
+
+    background:
+        linear-gradient(to right,  var(--accent) 1px, transparent 1px)   0    0,
+        linear-gradient(to right,  var(--accent) 1px, transparent 1px)   0  100%,
+        linear-gradient(to left,   var(--accent) 1px, transparent 1px) 100%   0,
+        linear-gradient(to left,   var(--accent) 1px, transparent 1px) 100% 100%,
+        linear-gradient(to bottom, var(--accent) 1px, transparent 1px)   0    0,
+        linear-gradient(to bottom, var(--accent) 1px, transparent 1px) 100%   0,
+        linear-gradient(to top,    var(--accent) 1px, transparent 1px)   0  100%,
+        linear-gradient(to top,    var(--accent) 1px, transparent 1px) 100% 100%;
+
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+}
+
+.badges {
+    display : flex;
+
+    flex-wrap : wrap;
+
+    overflow : visible;
+
+    padding : 0px;
+    margin  : 0px;
+
+    justify-content : center;
+}
+
+.listing {
+    display : flex;
+
+    flex-direction : column;
+}
+
+.listing-link {
+    display  : block;
+    position : relative;
+
+    padding-top    : 0px;
+    padding-bottom : 5pt;
+    padding-left   : 0px;
+    margin         : 10pt;
+
+    text-align : left;
+
+    overflow : visible;
+
+    color  : var(--fg);
+    border : var(--border);
+
+    text-decoration : none;
+
+    transition : all var(--trans-time);
+
+}
+
+.dim-text {
+    opacity : 0.6;
+}
+
+.listing-link:hover h3 {
+    background : white;
+    color : black;
+
+    box-shadow : var(--glow), var(--glow-inv);
+
+    font-weight : bold;
+}
+
+.listing-link > div {
+    display : flex;
+
+    flex-direction : column;
+}
+
+.listing-link * {
+    padding : 0px;
+    margin  : 0px;
+}
+
+.listing-info {
+    display : flex;
+
+    margin-top  : 5pt;
+    margin-left : 5pt;
+
+    flex-direction : row;
+}
+
+.listing-info > * {
+    display : inline;
+}
+
+.listing-info > p {
+    font-weight : bold;
+}
+
+
+.listing-link h3 {
+    padding-left : 5pt;
+
+    font-size     : 22pt;
+    border-bottom : var(--border);
+    
+    transition : all var(--trans-time);
+}
+
+/* Blag-specific stuff */
+.blog {
+    padding : 10pt;
+
+    text-align : left;
+}
+
+.blog-title {
+    margin        : 0px;
+    margin-bottom : 2pt;
+
+    font-size : 22pt;
+}
+
+.blog-meta {
+    margin : 0px;
+
+    opacity : 0.75;
+}
+
+.blog h2 {
+    text-decoration : underline;
+    font-size       : 18pt;
+}

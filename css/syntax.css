@@ -1,0 +1,7 @@
+.hljs-comment {
+    opacity : 0.6;
+}
+
+.hljs-tag * {
+    color : #fcc01e;
+}

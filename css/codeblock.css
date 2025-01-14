@@ -1,0 +1,52 @@
+.codeblock-wrapper {
+    position : relative;
+
+    width : 100%;
+
+    padding       : 0px;
+    margin-top    : 10pt;
+    margin-bottom : 10pt;
+
+    white-space : nowrap;
+
+    border : var(--border);
+}
+
+.codeblock-title {
+    position : relative;
+    display  : block;
+
+    text-align : left;
+
+    overflow-y : hidden;
+
+    background : var(--bg-inv);
+    color      : var(--fg-inv);
+    box-shadow : var(--glow);
+
+    font-size   : 10pt;
+    font-weight : bold;
+}
+
+.codeblock {
+    overflow-x : scroll;
+}
+
+.codeblock-ln, .codeblock {
+    display : inline-block;
+   
+    height : 100%;
+
+    padding : 0px;
+    margin  : 0px;
+}
+
+.codeblock-ln {
+    border-right : var(--border);
+    border-image : linear-gradient(to bottom,
+        var(--accent) 50%,
+        transparent
+    ) 1;
+
+    text-align : center;
+}

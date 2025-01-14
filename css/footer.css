@@ -1,0 +1,22 @@
+#footer {
+    display  : flex;
+    position : fixed;
+
+    bottom : 0px;
+    left   : 0px;
+    right  : 0px;
+
+    padding : 5pt;
+    margin  : 0pt;
+
+    flex-direction  : row;
+    justify-content : space-between;
+
+    background : #000e;
+    
+    box-shadow : var(--glow);
+}
+
+#footer > span > p {
+    display : inline;
+}

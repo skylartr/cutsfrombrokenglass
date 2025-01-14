@@ -1,0 +1,51 @@
+:root {
+    --accent-blue : #aaaaff;
+    --accent-pink : #ff6ffa;
+    
+    --accent : #ff6ffa;
+
+    --app-bg : #0005;
+
+    --fg     : white;
+    --fg-inv : black;
+
+    --bg-inv : var(--accent);
+
+    --glow     : 0 0 10px var(--accent);
+    --glow-inv : 0 0 55px var(--accent) inset;
+
+    --link-glow : 0 0  5px white;
+
+    --border : 1px solid var(--accent);
+
+    --trans-time : .15s;
+
+    --max-width : 1500px;
+}
+
+@font-face {
+    font-family : 'Fira Code';
+    src         : url("/css/FiraCode.ttf") format("truetype");
+}
+.about-page:root {
+    --accent-blue: #00ff00;
+    --accent-pink: #00ff00;
+
+    --accent: #0f0;
+
+    --app-bg: #000;
+
+    --fg: #0f0;
+    --fg-inv: black;
+
+    --bg-inv: #0f0;
+
+    --glow: 0 0 10px #0f0;
+    --glow-inv: 0 0 55px #0f0 inset;
+
+    --link-glow: 0 0 5px #0f0;
+
+    --border: 1px solid #0f0;
+
+    --trans-time: .15s;
+}

@@ -1,0 +1,50 @@
+
+.about-page {
+    background: #000; 
+    color: #0f0; 
+    font-family: monospace; 
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0; 
+    animation: crt-flicker 0.15s infinite;
+}
+
+
+.about-page nav,
+.about-page .navigation {
+    background: none;
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0;
+}
+
+.about-page nav a,
+.about-page .navigation a {
+    color: #0f0;
+    text-decoration: none;
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0;
+}
+
+.about-page nav a:hover,
+.about-page .navigation a:hover {
+    color: #00ff00;
+    text-decoration: underline;
+}
+
+
+.about-page table,
+.about-page th,
+.about-page td {
+    background: none; 
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0;
+}
+
+@keyframes crt-flicker {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0.95;
+    }
+    75% {
+        opacity: 0.98;
+    }
+}

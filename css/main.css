@@ -1,0 +1,130 @@
+html {
+    overflow-x : hidden;
+    margin     : 0;
+    padding    : 0;
+}
+
+
+
+* {
+    overflow-x             : hidden;
+
+    color                  : var(--fg);
+    background             : transparent;
+
+    font-family            : 'Fira Code', monospace !important;
+    font-variant-ligatures : all;
+}
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    text-align: center;
+    justify-content: center;
+
+    background-image: linear-gradient(
+        to bottom,
+        #000000 0%,    
+        #300060 30%,   
+        #1a0033 60%,   
+        #4b0082 100%   
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    scrollbar-color: #aa5aaa88 #0000;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center; 
+    vertical-align: middle; 
+}
+
+th {
+    background-color: #FF6FFA;
+    font-weight: bold;
+}
+.no-border td {
+    border: none; 
+}
+
+.crt-effect {
+  background: #000; 
+  color: #0f0; 
+  font-family: monospace; 
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0; 
+  animation: crt-flicker 0.15s infinite;
+}
+
+
+.crt-effect a {
+  color: #0f0; 
+  text-decoration: none; 
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0; 
+}
+
+.crt-effect a:hover {
+  color: #00ff00; 
+  text-decoration: underline; 
+}
+
+
+.crt-effect th,
+.crt-effect td {
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; 
+}
+
+
+.crt-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 255, 0, 0.03) 50%,
+    transparent 50%
+  ); 
+  background-size: 100% 2px;
+  pointer-events: none;
+  z-index: 100;
+  animation: scanlines 0.1s infinite; 
+}
+
+
+@keyframes crt-flicker {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.95;
+  }
+  75% {
+    opacity: 0.98;
+  }
+}
+
+@keyframes scanlines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
