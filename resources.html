@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+ $$$$$$\  $$\   $$\ $$\     $$\   $$\ $$\   $$\ $$$$$$$\  
+$$  __$$\ $$ | $$  |\$$\   $$  |$$$$ |$$ |  $$ |$$  __$$\ 
+$$ /  \__|$$ |$$  /  \$$\ $$  / \_$$ |$$ |  $$ |$$ |  $$ |
+\$$$$$$\  $$$$$  /    \$$$$  /    $$ |$$$$$$$$ |$$$$$$$  |
+ \____$$\ $$  $$<      \$$  /     $$ |\_____$$ |$$  __$$< 
+$$\   $$ |$$ |\$$\      $$ |      $$ |      $$ |$$ |  $$ |
+\$$$$$$  |$$ | \$$\     $$ |    $$$$$$\     $$ |$$ |  $$ |
+ \______/ \__|  \__|    \__|    \______|    \__|\__|  \__|
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <style>
+        body {
+            background-color: black;
+            color: #ffb347; /* Amber color */
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .top-bar {
+            background-color: black;
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ffb347;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffb347;
+        }
+
+        .menu-item img {
+            display: block;
+            width: 24px;
+            height: 24px;
+        }
+
+        .menu-item span {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .ascii-title {
+            font-size: 18px;
+            color: #ffb347;
+            text-align: center;
+        }
+
+        .table {
+            border: 1px solid #ffb347;
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        .table th, .table td {
+            border: 1px solid #ffb347;
+            padding: 5px;
+            text-align: left;
+        }
+
+        .prompt {
+            text-align: center;
+            color: #ffb347;
+            margin: 20px 0;
+        }
+
+        .prompt p {
+            font-size: 14px;
+        }
+
+        .terminal {
+            background-color: black;
+            color: #ffb347;
+            border: 2px solid #ffb347;
+            padding: 10px;
+            width: 80%;
+            margin: 0 auto;
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+        }
+
+        .terminal-output {
+            height: 200px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+
+        .terminal-input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            color: #ffb347;
+            font-family: inherit;
+            font-size: inherit;
+            outline: none;
+            margin-top: 10px;
+        }
+
+        .footer-bar {
+            background-color: black;
+            color: #ffb347;
+            padding: 10px;
+            text-align: center;
+            border-top: 2px solid #ffb347;
+        }
+
+        .terminal-output {
+            text-shadow: 0 0 5px #ffb347;
+        }
+
+        .terminal-input {
+            text-shadow: 0 0 5px #ffb347;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="menu-item">
+            <a href="index.html"><span style="color: #ffb347;">index</span></a>
+        </div>
+        <div class="menu-item">
+            <a href="tech.html"><span style="color: #ffb347;">tech</span></a>
+        </div>
+        <div class="menu-item">
+            <a href="resources.html"><span style="color: #ffb347;">resources</span></a>
+        </div>
+        <div class="menu-item">
+            <a href="about.html"><span style="color: #ffb347;">about</span></a>
+        </div>
+    </div>
+<!--ansi-title-->
+<div class="content">
+    <div class="ascii-title">
+        <pre>
+         ▄▄· ▄• ▄▌▄▄▄▄▄.▄▄ · ·▄▄▄▄▄▄        • ▌ ▄ ·.         
+        ▐█ ▌▪█▪██▌•██  ▐█ ▀. ▐▄▄·▀▄ █·▪     ·██ ▐███▪        
+        ██ ▄▄█▌▐█▌ ▐█.▪▄▀▀▀█▄██▪ ▐▀▀▄  ▄█▀▄ ▐█ ▌▐▌▐█·        
+        ▐███▌▐█▄█▌ ▐█▌·▐█▄▪▐███▌.▐█•█▌▐█▌.▐▌██ ██▌▐█▌        
+        ·▀▀▀  ▀▀▀  ▀▀▀  ▀▀▀▀ ▀▀▀ .▀  ▀ ▀█▄▀▪▀▀  █▪▀▀▀        
+▄▄▄▄· ▄▄▄        ▄ •▄ ▄▄▄ . ▐ ▄  ▄▄ • ▄▄▌   ▄▄▄· .▄▄ · .▄▄ · 
+▐█ ▀█▪▀▄ █·▪     █▌▄▌▪▀▄.▀·•█▌▐█▐█ ▀ ▪██•  ▐█ ▀█ ▐█ ▀. ▐█ ▀. 
+▐█▀▀█▄▐▀▀▄  ▄█▀▄ ▐▀▀▄·▐▀▀▪▄▐█▐▐▌▄█ ▀█▄██▪  ▄█▀▀█ ▄▀▀▀█▄▄▀▀▀█▄
+██▄▪▐█▐█•█▌▐█▌.▐▌▐█.█▌▐█▄▄▌██▐█▌▐█▄▪▐█▐█▌▐▌▐█ ▪▐▌▐█▄▪▐█▐█▄▪▐█
+·▀▀▀▀ .▀  ▀ ▀█▄▀▪·▀  ▀ ▀▀▀ ▀▀ █▪·▀▀▀▀ .▀▀▀  ▀  ▀  ▀▀▀▀  ▀▀▀▀ 
+        </pre>
+    </div>
+        <div class="prompt">
+            <p id="random-prompt">Loading...</p>
+        </div>
+    </div>
+    <script>
+        const prompts = [
+            "... break yo self foo!",
+            "Who put this thing together? Me! That's who!",
+            "Swiped out in January, turnt shit up in May",
+            "In this bitch supportin' trans rights",
+            "556 man, you know how it go",
+            "410,757,864,530 DEAD COPS",
+            "TEAM RAiD",
+            "WE SALUTE THE COMPETITION AND ALL GROUPS THAT CONTRIBUTE TO THE SCENE!",
+            "1312",
+            "Thanks for choosing (C)hallenge (O)f (R)everse (E)ngineering!",
+            "FREE ROSS",
+            "Смерть проста и необычна",
+            "IF YOU USE THIS SOFTWARE, BUY IT!",
+            "I woke up, all I could taste was blood",
+            "Software worth using is worth buying.. keep this in mind!",
+            "still sneaking late at night",
+            "I want a ham an egg and a cheese biscuit okay, hellur",
+            "I wrote my own fucking compiler",
+            "It's not piracy. It's alternative solution.",
+            "Reptilian Club Boyz Bitch",
+            "0DAY NEVER DIE",
+            "from the streets - for the streets",
+            "Hi-C! Hi-C!",
+            "Kill Em All 1989"
+        ];
+
+        function getRandomPrompt() {
+            const randomIndex = Math.floor(Math.random() * prompts.length);
+            return prompts[randomIndex];
+        }
+
+        document.getElementById("random-prompt").textContent = getRandomPrompt();
+    </script>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>/links/</th>
+                    <th>/description/</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://gifcities.org/" style="color: #ff6ffa;">GifCities</a></td>
+                    <td>GeoCities Animated GIF Search Engine</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.asciiart.eu/text-to-ascii-art" style="color: #ff6ffa;">asciiart.eu</a></td>
+                    <td>Text/image to ASCII/ANSI art</td>
+                </tr>
+                <tr>
+                    <td><a href="https://ascii.today/" style="color: #ff6ffa;">ascii.today</a></td>
+                    <td>Text to ASCII art</td>
+                </tr>
+                <tr>
+                    <td><a href="https://patorjk.com/software/taag/" style="color: #ff6ffa;">patorjk</a></td>
+                    <td>Text to ASCII art</td>
+                </tr>
+                <tr>
+                    <td><a href="https://web.archive.org/web/20230503122119/https://links.yesterweb.org/" style="color: #ff6ffa;">Yesterlinks Archive</a></td>
+                    <td>Lots of links from Yesterweb.org</td>
+                </tr>
+                <tr>
+                    <td><a href="https://yesterweb.org/" style="color: #ff6ffa;">Yesterweb.org</a></td>
+                    <td>Reclaim the net!!</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www10.pimp-my-profile.com/" style="color: #ff6ffa;">Pimp-My-Profile</a></td>
+                    <td>Broken html myspace layouts to sort through</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.webdesignmuseum.org/" style="color: #ff6ffa;">Web Design Museum</a></td>
+                    <td>GeoCities Animated GIF Search Engine</td>
+                </tr>
+                <tr>
+                    <td><a href="https://int10h.org/oldschool-pc-fonts/fontlist/" style="color: #ff6ffa;">int10h</a></td>
+                    <td>Really cool retro website with vintage pc fonts</td>
+                </tr>
+                <tr>
+                  <td><a href="https://picrew.me/" style="color: #ff6ffa;">picrew</a></td>
+                    <td>Various avatar/pfp makers</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.sp-studio.de/" style="color: #ff6ffa;">sp-studio</a></td>
+                    <td>Create your own South Park characters similar to picrew</td>
+                </tr>
+                <tr>
+                    <td><a href="https://webamp.org/" style="color: #ff6ffa;">Webamp</a></td>
+                    <td>Winamp 2 in your browser</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.yarn.co/" style="color: #ff6ffa;">yarn.co</a></td>
+                    <td>Search for move & tv clips by quote</td>
+                </tr>
+                <tr>
+                    <td>/legacy/</td>
+                </tr>
+                <tr>
+                    <td><a href="https://legacyupdate.net/" style="color: #ff6ffa;">legacyupdate</a></td>
+                    <td>Updates for unsupported versions of Windows</td>
+                </tr>
+                <tr>
+                    <td><a href="https://skins.webamp.org/" style="color: #ff6ffa;">Winamp Skin Museum</a></td>
+                    <td>Huge collection of Winamp skins to download</td>
+                </tr>
+                <tr>
+                    <td><a href="http://www.oldversion.com/" style="color: #ff6ffa;">oldversion</a></td>
+                    <td>Large archive of old version of software</td>
+                </tr>
+                <tr>
+                    <td>/88x31-buttons/</td>
+                </tr>
+                <tr>
+                    <td><a href="https://yesterweb.org/graphics/buttons" style="color: #ff6ffa;">Yesterweb.org</a></td>
+                    <td>An archive of buttons created or shared by the community</td>
+                </tr>
+                <tr>
+                    <td><a href="https://cyber.dabamos.de/88x31/index.html" style="color: #ff6ffa;">cyber.dabamos.de</a></td>
+                    <td>The 88x31 GIF Collection</td>
+                </tr>
+                <tr>
+                    <td><a href="https://anlucas.neocities.org/88x31Buttons" style="color: #ff6ffa;">anlucas.neocities.org</a></td>
+                    <td>A collection of more than 700 88x31 web buttons from the 1990s and 2000s,</td>
+                </tr>
+                <tr>
+                    <td><a href="http://www.88x31.nl/" style="color: #ff6ffa;">88x31.nl</a></td>
+                    <td>A collection with over 6500 GIF's and PNG's in 88x31 format</td>
+                </tr>
+                <tr>
+                    <td><a href="https://hellnet.work/8831/" style="color: #ff6ffa;">hellnet.work</a></td>
+                    <td>Contains 31,119 unique* 88x31 buttons scraped from GeoCities</td>
+                </tr>
+                <tr>
+                    <td><a href="https://deadnet.se/88x31/index.html" style="color: #ff6ffa;">deadnet.se</a></td>
+                    <td>A collection of 3913 classic 88x31 buttons from the 1990s and 2000s</td>
+                </tr>
+                <tr>
+                    <td><a href="https://neonaut.neocities.org/cyber/88x31" style="color: #ff6ffa;">neonaut.neocities.org</a></td>
+                    <td>88x31 GeoCities buttons for site users</td>
+                </tr>
+                <tr>
+                    <td><a href="https://adriansblinkiecollection.neocities.org/buttons" style="color: #ff6ffa;">adrians button collection</a></td>
+                    <td>88x31 buttons from adrians blinkie collection</td>
+                </tr>
+                <tr>
+                    <td><a href="https://y2k.neocities.org/buttons" style="color: #ff6ffa;">y2k.neocities.org</a></td>
+                    <td>Small but colorful collection of buttons</td>
+                </tr>
+                <tr>
+                    <td>/blinkies/</td>
+                </tr>
+                <tr>
+                    <td><a href="https://y2k.neocities.org/blinkies" style="color: #ff6ffa;">y2k.neocities.org</a></td>
+                    <td>Small but colorful collection of blinkies</td>
+                </tr>
+                <tr>
+                    <td><a href="https://blinkies.cafe/wall" style="color: #ff6ffa;">blinkies.cafe</a></td>
+                    <td>The blinkie wall</td>
+                </tr>
+                <tr>
+                    <td><a href="https://adriansblinkiecollection.neocities.org/" style="color: #ff6ffa;">neonaut.neocities.org</a></td>
+                    <td>Huge blinkie collection still maintained</td>
+                </tr>
+                <tr>
+                    <td><a href="https://nustufff.carrd.co/" style="color: #ff6ffa;">nustufff</a></td>
+                    <td>geesusofsuburbia's blinkie collection</td>
+                </tr>
+                <tr>
+                    <td><a href="https://plasticdino.neocities.org/blinkie/blinkies" style="color: #ff6ffa;">plasticdino</a></td>
+                    <td>plasticdino blinkie collection</td>
+                </tr>
+                <tr>
+                    <td><a href="https://toyhou.se/18559828.f2u-blinkie-collection/gallery" style="color: #ff6ffa;">F2U blinkie collection</a></td>
+                    <td>Large blinkie collection from GeoCities/Tumblr/GifCity/</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gifcity.carrd.co/#blinkies" style="color: #ff6ffa;">gifcity</a></td>
+                    <td>Blinkies sorted by color</td>
+                </tr>
+                <tr>
+                    <td>/favorite-sites/</td>
+                </tr>
+                <tr>
+                    <td><a href="https://deadnet.se/" style="color: #ff6ffa;">deadnet.se</a></td>
+                    <td>Super retro site with a really cool gallery</td>
+                </tr>
+                <tr>
+                    <td><a href="https://goblin-heart.net/sadgrl/" style="color: #ff6ffa;">sadgrl.online</a></td>
+                    <td>A helpful resource for website creation</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.cameronsworld.net/" style="color: #ff6ffa;">cameronsworld</a></td>
+                    <td>Insanely creative website to scroll through</td>
+                </tr>
+                <tr>
+                    <td>/demo-scene/</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.nfohump.com/forum/index.php" style="color: #ff6ffa;">nfohump</a></td>
+                    <td>Huge collection of .nfo files to view from various release groups</td>
+                </tr>
+                <tr>
+                    <td><a href="https://defacto2.net/" style="color: #ff6ffa;">defacto2</a></td>
+                    <td>Warez/DemoScene/Release group archive</td>
+                </tr>
+                <tr>
+                    <td><a href="https://demozoo.org/" style="color: #ff6ffa;">demozoo</a></td>
+                    <td>Huge demoscene archive</td>
+                </tr>
+                <tr>
+                    <td><a href="https://files.scene.org/" style="color: #ff6ffa;">scene.org</a></td>
+                    <td>The Scene.org file archive</td>
+                </tr>
+                <tr>
+                    <td>/misc/</td>
+                </tr>
+                <tr>
+                    <td><a href="https://translifeline.org/" style="color: #ff6ffa;">Trans Lifeline</a></td>
+                    <td>Support & resources for those who are transgender</td>
+                </tr>
+                <tr>
+                    <td><a href="https://lgbt.foundation/" style="color: #ff6ffa;">LGBT Foundation</a></td>
+                    <td>A national LGBTQ+ charity</td>
+                </tr>
+                <tr>
+                    <td><a href="https://theanarchistlibrary.org/special/index" style="color: #ff6ffa;">The Anarchist Library</a></td>
+                    <td>Huge anarchist text library updated with new material frequently</td>
+                </tr>
+                <tr>
+                    <td><a href="https://anarchistnews.org/" style="color: #ff6ffa;">Anarchist News</a></td>
+                    <td>We create the anarchy we want in the world</td>
+                </tr>
+                <tr>
+                    <td><a href="https://freeross.org/" style="color: #ff6ffa;">freeross.org</a></td>
+                    <td>Website dedicated to Ross Ulbricht</td>
+                </tr>
+                <tr>
+                    <td><a href="https://en.wikipedia.org/wiki/Kevin_Mitnick" style="color: #ff6ffa;">Kevin Mitnick Wiki</a></td>
+                    <td>FREE KEVIN. RIP. Literally my inspiration to get into cybersecurity</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.floppydisk.com/" style="color: #ff6ffa;">floppydisk.com</a></td>
+                    <td>Buy 3.5 floppy disks</td>
+                </tr>
+                <tr>
+                    <td><a href="https://archive.org/" style="color: #ff6ffa;">archive.org</a></td>
+                    <td>The internet archive</td>
+                </tr>
+                <tr>
+                    <td><a href="https://web.archive.org/" style="color: #ff6ffa;">web.archive.org</a></td>
+                    <td>Page to save websites</td>
+                </tr>
+                <tr>
+                    <td><a href="https://archive.ph/" style="color: #ff6ffa;">archive.ph</a></td>
+                    <td>Alternative to archive.org for website saving</td>
+                </tr>
+                <tr>
+                    <p>
+                    <u></u><br>
+                </tr>
+<!--terminal-->
+<!--
+            </tbody>
+        </table>
+        <div>
+        <div class="terminal">
+            <div class="terminal-output" id="terminal-output"></div>
+            <input 
+                type="text" 
+                class="terminal-input" 
+                id="terminal-input" 
+                placeholder="Type a command..." 
+                onkeypress="handleCommand(event)">
+        </div>
+    <div>
+<br>
+    <div class="footer-bar">
+        <p>Powered by HRT</p>
+    </div>
+
+    <script>
+        const outputDiv = document.getElementById('terminal-output');
+        const inputField = document.getElementById('terminal-input');
+
+        function handleCommand(event) {
+            if (event.key === 'Enter') {
+                const command = inputField.value.trim();
+                inputField.value = ''; // Clear the input field
+                if (command) {
+                    appendToTerminal(`$ ${command}`);
+                    executeCommand(command);
+                }
+            }
+        }
+
+        function appendToTerminal(text) {
+            outputDiv.innerHTML += `${text}\n`;
+            outputDiv.scrollTop = outputDiv.scrollHeight; // Scroll to the bottom
+        }
+
+        function executeCommand(command) {
+            const responses = {
+                help: "Available commands: help, clear, echo [text]",
+                clear: "clear",
+                echo: "You said: "
+            };
+
+            if (command === 'clear') {
+                outputDiv.innerHTML = '';
+            } else if (command.startsWith('echo ')) {
+                const message = command.substring(5);
+                appendToTerminal(responses.echo + message);
+            } else if (responses[command]) {
+                appendToTerminal(responses[command]);
+            } else {
+                appendToTerminal(`Unknown command: ${command}`);
+            }
+        }
+    </script>
+-->
