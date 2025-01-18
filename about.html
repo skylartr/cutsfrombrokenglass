@@ -73,15 +73,56 @@ and CSS! Still learning but I've gotten way better :3
             <p style="margin: 0; font-weight: bold; font-size: 16px;">
                 UNK//NA//AA <br>
                 hav7c  slaq  kilvrs  screvmz  nesxs  Bsgkane  EVILST4RR  Cashjunko  siptilwedie  Xaviersobased  Lebxanon  <br>
-                Lil Shine  vnmpire  22juggn  Cartier God  Hi-C  nosgov  Lazygod  BLOODR4YNE  v.rxxxy  talibands  2slimey  wckkd
+                Lil Shine  vnmpire  22juggn  Cartier God  Hi-C  nosgov  Lazygod  BLOODR4YNE  v.rxxxy  talibands  2slimey  wckkd  <br>
+                VS Self  Sunami  SALT  Femtanyl  Faye Webster   Cold World  6arelyhuman  Ayesha Erotica
             </p>
         </div>
-    </div>
+<br>
+<!--
+<div id="cover-gallery">
+    <div class="cover">
+    <img src="https://t2.genius.com/unsafe/340x340/https%3A%2F%2Fimages.genius.com%2Fec0073171df04c56b1378c3f400e690e.500x500x1.jpg">
+  </div>
+  <div class="cover">
+    <img src="https://t2.genius.com/unsafe/853x0/https%3A%2F%2Fimages.genius.com%2F4a47ad8f57d3a6209faec2aca7fdd3f0.1000x1000x1.jpg">
+  </div>
+
+  <div class="cover">
+    <img src="https://t2.genius.com/unsafe/853x0/https%3A%2F%2Fimages.genius.com%2Fcbbc2c26b686ff09c20c2efb5235af1d.999x999x1.png">
+  </div>
+  
+    <div class="cover">
+    <img src="https://t2.genius.com/unsafe/749x0/https%3A%2F%2Fimages.genius.com%2Fd8fd3a4f2306ed8cac826945caf8e228.823x823x1.jpg">
+  </div>
+
+  <div class="cover">
+    <img src="https://t2.genius.com/unsafe/252x252/https%3A%2F%2Fimages.genius.com%2F7c32527feabb2e20c58bd900920e7ac0.1000x1000x1.png">
+  </div>
+
+  <div class="cover">
+    <img src="https://i1.sndcdn.com/avatars-UR7KYRpMzuaXjT6O-CICgsQ-t500x500.jpg">
+  </div>
+  
+    <div class="cover">
+    <img src="https://t2.genius.com/unsafe/749x0/https%3A%2F%2Fimages.genius.com%2F87f2e73fa76e4eace2d31849fd2535f1.1000x1000x1.png">
+  </div>
+
+  <div class="cover">
+    <img src="https://t2.genius.com/unsafe/252x252/https%3A%2F%2Fimages.genius.com%2F99a74d2c3ea0b8d0b289e5a5cee245e2.500x500x1.jpg">
+  </div>
+  
+   <div class="cover">
+    <img src="https://t2.genius.com/unsafe/252x252/https%3A%2F%2Fimages.genius.com%2F39f451010502a166e66fa0a9575c65b1.499x499x1.jpg">
+-->
+</div>
     <a href="https://wigle.net" class="wigle-link">
         <img src="https://wigle.net/bi/pKdVyjLw3AtxfZVppzKQXA.png" alt="Wigle" class="wigle-img">
     </a>
     <br>
         <img src="/btn/sp.png">
+    <br>
+        <img src="/btn/cfbg-button.png">
+
 <div>
 <div id="app"></div>
 <script src="https://unpkg.com/webamp"></script>
@@ -103,3 +144,66 @@ and CSS! Still learning but I've gotten way better :3
 <p>
     2021-2025 CutsFromBrokenGlass
 </p>
+<style>
+#cover-gallery * {
+    all: unset;
+  }
+ 
+  #cover-gallery {
+    all: initial!important;
+    width: 100%!important;
+    height: 230px!important;
+    margin: 30px 0!important;
+    display: flex!important;
+    flex-direction: row!important;
+    position: relative!important;
+    margin-left: -6px!important;
+  }
+ 
+  #cover-gallery .cover {
+      all:unset!important;
+    perspective: 500px !important;
+    width: 18px!important;
+    transition: width 0.5s!important;
+  }
+ 
+  #cover-gallery .cover:hover {
+    width: 200px!important;
+  }
+ 
+  #cover-gallery img {
+      all:unset!important;
+    transition: transform 0.5s, width 0.5s, height 0.5s, margin-top 0.5s!important;
+    width: 180px!important;
+    height: 180px!important;
+    transform: rotateX(0deg) rotateY(25deg)!important;
+    transform-style: preserve-3d!important;
+    border-radius: 4px!important;
+    border: 2px solid rgba(0, 0, 0, 0.1)!important;
+object-fit: cover!important;
+  }
+ 
+  #cover-gallery .cover:hover img {
+    transform: rotateX(0deg) rotateY(10deg)!important;
+    width: 188px!important;
+    height: 188px!important;
+    margin-top: -2px!important;
+  }
+ 
+  #cover-gallery .title {
+    color: #000000;
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+    padding-left: 6px;
+    font-size: 20px; 
+    font-weight: bold;
+  }
+ 
+  #cover-gallery .cover:nth-child(n):hover + .title {
+    visibility: visible;
+  }
+  </style>
