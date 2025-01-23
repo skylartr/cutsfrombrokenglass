@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', monospace;
+            background: #000; 
+            color: #00FF00;
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px;
+            background: #111; 
+            border-bottom: 3px solid #00FF00;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            background: #111;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: #00FF00;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .navigation a:hover {
+            color: #FFD700; 
+        }
+
+        .app {
+            margin: 20px auto;
+            max-width: 600px;
+            background: #111;
+            padding: 20px;
+            border: 1px solid #00FF00;
+            box-shadow: 0 0 15px #00FF00;
+            border-radius: 8px;
+        }
+
+        .app-title {
+            font-size: 16px;
+            color: #FFD700; 
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        p {
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .new-post-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #000;
+            background: #FFD700;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+
+        .new-post-btn:hover {
+            background: #FFC107;
+        }
+    </style>
+
+    <title>Blog</title>
+</head>
+<body>
+    <div id="header">
+        <pre>
+ _______  __   __  _______  _______  _______  ______   _______  __   __ 
+|       ||  | |  ||       ||       ||       ||    _ | |       ||  |_|  |
+|       ||  | |  ||_     _||  _____||    ___||   | || |   _   ||       |
+|       ||  |_|  |  |   |  | |_____ |   |___ |   |_|| |  | |  ||       |
+|      _||       |  |   |  |_____  ||    ___||    __ ||  |_|  ||       |
+|     |_ |       |  |   |   _____| ||   |    |   |  |||       || ||_|| |
+|_______||_______|  |___|  |_______||___|    |___|  |||_______||_|   |_|
+ _______  ______   _______  ___   _  _______  __    _  _______  ___      _______  _______  _______ 
+|  _    ||    _ | |       ||   | | ||       ||  |  | ||       ||   |    |   _   ||       ||       |
+| |_|   ||   | || |   _   ||   |_| ||    ___||   |_| ||    ___||   |    |  |_|  ||  _____||  _____|
+|       ||   |_|| |  | |  ||      _||   |___ |       ||   | __ |   |    |       || |_____ | |_____ 
+|  _   | |    __ ||  |_|  ||     |_ |    ___||  _    ||   ||  ||   |___ |       ||_____  ||_____  |
+| |_|   ||   |  |||       ||    _  ||   |___ | | |   ||   |_| ||       ||   _   | _____| | _____| |
+|_______||___|  |||_______||___| |_||_______||_|  |__||_______||_______||__| |__||_______||_______|
+
+        </pre>
+    </div>
+
+    <!--navbar-->
+    <div class="navigation">
+        <a href="index.html">HOME</a>
+        <a href="tech.html">TECH</a>
+        <a href="blog.html">BLOG</a>
+        <a href="resources.html">RESOURCES</a>
+        <a href="about.html">ABOUT</a>
+    </div>
+    <div id="posts">
+    </div>
+    <script>
+        const posts = [
+            {
+                date: "01/22/2025",
+                content: "Updated this page with a better layout. The resources & tech pages are being updated frequently. Check out what I added",
+            },
+            {
+                date: "01/15/2025",
+                content: "Got the NerdMiner V2 running on my esp32 cyd that I cooked the wifi antenna on. Cool little project if you got an extra cyd laying around that's slightly broken. I put some resources under the tech page if you're interested :3",
+            },
+            {
+                date: "01/11/2025",
+                content: "Just added a page titled resources filled with links and useful websites.",
+            },
+            {
+                date: "12/06/2024",
+                content: "FREE LIL SHINE",
+            },
+        ];
+
+        const renderPosts = () => {
+            const postsContainer = document.getElementById("posts");
+            postsContainer.innerHTML = ""; // Clear existing posts
+            posts.forEach((post) => {
+                const postDiv = document.createElement("div");
+                postDiv.className = "app";
+                postDiv.innerHTML = `
+                    <span class="app-title">${post.date}</span>
+                    <p>${post.content}</p>
+                `;
+                postsContainer.appendChild(postDiv);
+            });
+        };
+
+        const addNewPost = () => {
+            const newPost = {
+                date: prompt("Enter the date (MM/DD/YYYY):"),
+                content: prompt("Enter the post content:"),
+            };
+            if (newPost.date && newPost.content) {
+                posts.unshift(newPost); 
+                renderPosts();
+            }
+        };
+        renderPosts();
+    </script>
+</body>
+</html>
