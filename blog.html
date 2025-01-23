@@ -78,13 +78,84 @@
         .new-post-btn:hover {
             background: #FFC107;
         }
+        .gradient {
+            font-weight: bold;
+            display: inline-block;
+            background: linear-gradient(
+                to bottom,
+                #0c7af0,
+                #0c7af0,
+                #f00cb7,
+                #f00cb7,
+                #FFFFFF,
+                #FFFFFF,
+                #f00cb7,
+                #f00cb7,
+                #0c7af0,
+                #0c7af0,
+                #f00cb7,
+                #f00cb7,
+                #FFFFFF,
+                #FFFFFF,
+                #f00cb7,
+                #f00cb7,
+				#0c7af0,
+                #0c7af0,
+                #f00cb7,
+                #f00cb7,
+                #FFFFFF,
+                #FFFFFF,
+                #f00cb7,
+                #f00cb7,
+                #0c7af0,
+                #0c7af0,
+                #f00cb7,
+                #f00cb7,
+                #FFFFFF,
+                #FFFFFF,
+                #f00cb7,
+                #f00cb7,
+				#0c7af0,
+                #0c7af0,
+                #f00cb7,
+                #f00cb7,
+                #FFFFFF,
+                #FFFFFF,
+                #f00cb7,
+                #f00cb7,
+                #0c7af0,
+                #0c7af0,
+                #f00cb7,
+                #f00cb7,
+                #FFFFFF,
+                #FFFFFF,
+                #f00cb7,
+                #f00cb7
+            );
+            background-size: 100% 800%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientFlow 10s linear infinite;
+        }
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 0% 100%;
+            }
+        }
+        pre {
+            margin: 0;
+        }
     </style>
 
     <title>Blog</title>
 </head>
 <body>
     <div id="header">
-        <pre>
+        <pre class="gradient">        
+			<pre>
  _______  __   __  _______  _______  _______  ______   _______  __   __ 
 |       ||  | |  ||       ||       ||       ||    _ | |       ||  |_|  |
 |       ||  | |  ||_     _||  _____||    ___||   | || |   _   ||       |
@@ -99,7 +170,7 @@
 |  _   | |    __ ||  |_|  ||     |_ |    ___||  _    ||   ||  ||   |___ |       ||_____  ||_____  |
 | |_|   ||   |  |||       ||    _  ||   |___ | | |   ||   |_| ||       ||   _   | _____| | _____| |
 |_______||___|  |||_______||___| |_||_______||_|  |__||_______||_______||__| |__||_______||_______|
-
+-------------------------------------------------------------//T4T 1312//--------------------------
         </pre>
     </div>
 
@@ -115,21 +186,33 @@
     </div>
     <script>
         const posts = [
-            {
+			{
                 date: "01/22/2025",
+                content: "Ross Ulbricht is finally free!! I remember being really young discovering him, back when there was a shitty clone of silk road on the dark web. V2 links were still a thing at this time, I thought it was actually silk road and got so excited lol",
+            },
+            {
+                date: "01/21/2025",
                 content: "Updated this page with a better layout. The resources & tech pages are being updated frequently. Check out what I added",
             },
             {
                 date: "01/15/2025",
-                content: "Got the NerdMiner V2 running on my esp32 cyd that I cooked the wifi antenna on. Cool little project if you got an extra cyd laying around that's slightly broken. I put some resources under the tech page if you're interested :3",
+                content: "Got the NerdMiner V2 running on my esp32 2432S028R CYD that I burnt the wifi antenna on (Was one of my first times soldering). It still functioned but the signal was clearly much worse. Cool little project if you got an extra cyd laying around that's slightly broken. I put some resources under the tech page if you're interested :3",
             },
             {
                 date: "01/11/2025",
                 content: "Just added a page titled resources filled with links and useful websites.",
             },
             {
+                date: "12/14/2024",
+                content: "Currently trying to reverse engineer a Hanshow Nebular 350R-N ",
+            },
+            {
                 date: "12/06/2024",
                 content: "FREE LIL SHINE",
+            },
+            {
+                date: "10/17/2024",
+                content: "How you living life with no passion????"
             },
         ];
 

@@ -19,14 +19,90 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="/css/config.css">
 <link rel="stylesheet" type="text/css" href="/css/main.css">
-<link rel="stylesheet" type="text/css" href="/css/header.css">
 <link rel="stylesheet" type="text/css" href="/css/navigation.css">
 <link rel="stylesheet" type="text/css" href="/css/app.css">
 <link rel="stylesheet" type="text/css" href="/css/footer.css">
 <link rel="stylesheet" type="text/css" href="/css/content.css">
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            font-family: monospace;
+        }
 
+        #header {
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+            overflow: hidden; /* Prevent scrollbars */
+        }
 
+        #header pre {
+            position: relative;
+            margin: 0;
+            padding: 10px;
+            font-size: min(2vw, 11pt);
+            white-space: pre-wrap; 
+            line-height: 1.2;
+            background-image: linear-gradient(
+                to bottom,
+                #0c7af0 0%,
+                #0c7af0 20%,
+                #f00cb7 30%,
+                #FFFFFF 40%,
+                #f00cb7 70%,
+                #0c7af0 80%,
+                #0c7af0 100%
+            );
+            background-repeat: no-repeat;
+            background-clip: text;
+            -webkit-background-clip: text; 
+            color: transparent;
+            background-size: 100% 100%;
+            text-shadow: 0 0 20px white;
+        }
 
+        #header pre::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.2) 0,
+                rgba(0, 0, 0, 0.2) 1px,
+                rgba(0, 0, 0, 0) 3px
+            );
+            mix-blend-mode: multiply;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        #header pre::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            animation: flicker 0.05s infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 0.1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+    </style>
 <title>Tech</title>
 </head>
 
@@ -103,6 +179,7 @@ ESP32 CYD Web Flasher</a><br>
 <a href="https://github.com/Fr4nkFletcher/NerdMiner_v2-Cheap-Yellow-Display" style="color: white;">NerdMiner V2 CYD</a><br>
 <span style="color: #ff6ffa;">/esp32-antenna-mod/</span><br>
 <a href="https://community.home-assistant.io/t/how-to-add-an-external-antenna-to-an-esp-board/131601" style="color: white;">External Antenna Guide</a><br>
+<a href="https://github.com/Fr4nkFletcher/ESP32-Marauder-Cheap-Yellow-Display/blob/master/AntennaMod.md" style="color: white;">Fr4nkFletcher Antenna Guide</a><br>
 <a href="https://www.amazon.com/Bingfu-Rosewill-Gigabyte-Wireless-Security/dp/B082SHKT3Q" style="color: white;">RP-SMA WiFi Antenna</a><br>
 <a href="https://www.amazon.com/Bingfu-Bulkhead-Express-Antenna-Wireless/dp/B07MM88N6J" style="color: white;">IPEX to RPA-SMA</a><br>
 <span style="color: #ff6ffa;">/esp32-cyd-case/</span><br>
@@ -156,42 +233,43 @@ ESP32 CYD Web Flasher</a><br>
 <br>
         <img src="/btn/cfbg-oe.png" style="width: 75%; height: 75%;">
 <p>
-<table>
-    <thead>
-        <tr>
-            <th>Tool</th>
-            <th>Usage</th>
-            <th>Platform</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        </tr>
-        <tr>
-        <tr class="no-border">
-            <td>downloaders</td>
-        </tr>
-    <td><a 
-    href="https://github.com/flyingrub/scdl" class="badge" target="_blank" rel="noopener noreferrer">scdl</a></td>
-    <td>cli downloader for soundcloud 128kbps mp3 and m4a</td>
-    <td>Windows, MacOS, Linux</td>
-        </tr>
-        <tr>
-            <td><a 
-    href="https://github.com/yt-dlp/yt-dlp" class="badge" target="_blank" rel="noopener noreferrer">yt-dlp</a></td>
-            <td>cli downloader for youtube</td>
-            <td>Windows, MacOS, Linux</td>
-        </tr>
-        <tr>
-            <td><a 
-    href="https://deemix.org/download/" class="badge" target="_blank" rel="noopener noreferrer">Deemix</a></td>
-            <td>deezer gui downloader for .flac [ARL needed]</td>
-            <td>Windows, MacOS, Linux, Android</td>
-        </tr>
-        <tr>
-                        <td><a 
-    href="https://lucida.to/" class="badge" target="_blank" rel="noopener noreferrer">Lucida.to</a>
-    </td>
+    <table>
+        <thead>
+            <tr>
+                <th>Tool</th>
+                <th>Usage</th>
+                <th>Platform</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr></tr>
+            <tr class="no-border">
+                <td>downloaders</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://github.com/flyingrub/scdl" class="badge" target="_blank" rel="noopener noreferrer">scdl</a>
+                </td>
+                <td>cli downloader for soundcloud 128kbps mp3 and m4a</td>
+                <td>Windows, MacOS, Linux</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://github.com/yt-dlp/yt-dlp" class="badge" target="_blank" rel="noopener noreferrer">yt-dlp</a>
+                </td>
+                <td>cli downloader for youtube</td>
+                <td>Windows, MacOS, Linux</td>
+            </tr>
+            <tr>
+                <td>
+    				<a href="https://deemix.org/download/" class="badge" target="_blank" rel="noopener noreferrer">Deemix</a></td>
+            	<td>deezer gui downloader for .flac [ARL needed]</td>
+            	<td>Windows, MacOS, Linux, Android</td>
+        	</tr>
+        	<tr>
+            	<td>
+					<a href="https://lucida.to/" class="badge" target="_blank" rel="noopener noreferrer">Lucida.to</a>
+    			</td>
             <td>download from various sites in hq</td>
             <td>Windows, MacOS, Linux, Android, iPhone</td>
         </tr>
@@ -199,23 +277,36 @@ ESP32 CYD Web Flasher</a><br>
         <tr class="no-border">
             <td>taggers</td>
         </tr>
-
-            <td><a 
-    href="https://www.mp3tag.de/en/" class="badge" target="_blank" rel="noopener noreferrer">mp3tag</a>
+<tr>
+    <td>
+        <a href="https://www.mp3tag.de/en/" class="badge" target="_blank" rel="noopener noreferrer">mp3tag</a>
     </td>
-            <td>music tagger good for quick edits</td>
-            <td>Windows, MacOS</td>
-        </tr>
+    <td>
+        music tagger, good for quick edits 
+        <a href="https://community.mp3tag.de/t/installation-backup/964/5" target="_blank" rel="noopener noreferrer">windows context menu fix</a>
+    </td>
+    <td>Windows, macOS</td>
+</tr>
                 <tr>
             <td><a 
     href="https://github.com/Marekkon5/onetagger" class="badge" target="_blank" rel="noopener noreferrer">OneTagger</a></td>
             <td>great bulk tagger supporting spotify api</td>
             <td>Windows, MacOS, Linux, Android</td>
             </tr>
+    <tr>
+    <td><a 
+    href="https://github.com/Rafiuth/Soggfy" class="badge" target="_blank" rel="noopener noreferrer">Soggfy</a></td>
+    <td>Spotify .ogg dumper, a process similar to recording when you listen to a track</td>
+    <td>Windows</td>
+    </tr>
+    <tr>
+    <td><a 
+    href="https://github.com/tranxuanthang/lrcget" class="badge" target="_blank" rel="noopener noreferrer">LRC GET</a></td>
+    <td>Mass downloading for .lrc files</td>
+    <td>Windows, MacOS, Linux</td>
+    </tr>  
             
-            
-            
-            
+ 
         <tr>
         <tr class="no-border">
             <td>other</td>
@@ -238,6 +329,9 @@ ESP32 CYD Web Flasher</a><br>
 <div class="app">  
     
     <span class="app-title">skylxr.rippers.dl</span>
+<pre style="font-family: monospace; font-size: 5px; white-space: pre; overflow-x: auto;">
+</pre>
+<br>
 <p>
 <table>
     <thead>
@@ -305,7 +399,25 @@ ESP32 CYD Web Flasher</a><br>
 </div>
 <div class="app">  
 <span class="app-title">personal.tar.gz</span>
-<p>software I use for this site
+<pre style="font-family: monospace; font-size: 5px; white-space: pre; overflow-x: auto;">
+    .'.                   .lx,  .;'                      .'ckKo.,o;             ..    ,,                ;dl'                                   ..       .:,             .;,                      .   ;dl'                                   ..       .:, :Oc.   cKx.                   .oo.                       ..        ;l;.             .c:.                         .                   ,o;               ,o;
+   'kKo.    .,.           ;KNc  cNO.                 .'codkXNk..xWK:           .xKx:'lXX:               lNWKxc'.                       ...  'cdOOl.  .:dko,.,,.        .dWK;       .c:.    .';ldkd,  lNWKxc'.                       ...  'cdOOl.  .:dko,.dW0,   .kNk.                  .dN0c.                   .cO0l.     ;KWNKOdl;..       '0No                        ,ko.                .xWK:             .xWK:
+  .dNWO.   cKNO'          ,KWl  '0K,            ..;lodoc,.,kx' .OWNXd,.      ...:dOKKXNN0l;,....        .oXNNXK0kdoc;''..             'kOccoo:;kW0:;dxo;.  :XNk'       .OWNx.     .dNXd:loddd0NXd.   .oXNNXK0kdoc;''..             'kOccoo:;kW0:;dxo;.  ;KWX:    'OWx.                  ;KKOk:. .;'  ':'       .oNNx.      cNXo:lx0XKOxol:,...:XXc                       ;XNc                .OWNXd,.      ..  .OWNXd,.      ..
+  :XNNNd. ;KX0:           ;XNc   oNo 'c:'.',;cldOXOc'.     .   ,KXdokkd:.  .cOd.   .';xNNX00OOOOOkkkkkxxo.dNNx,,:loxkkOOkkxd:.       .dN0d:.  .xWXOo;.     'OWN0;      :XNW0,   ,xkOXWKd:,.'oKk,      .dNNx,,:loxkkOOkkxd:.       .dN0d:.  .xWXOo;.    :OxxXl    c0k'                   .xXl:k0dkO, .oNXx,     lNNo       '0Wo'   ..;codk0Odc..oNO'                      ,KW0,               ,KXdokkd:.  .cOd. ,KXdokkd:.  .cOd.
+ .kW0dKNd'dWOc.           lNK,   '00'cXNXOxdol;c0Wo            :NO.      'o0NO,.      'OW0;....',,,,,,''' .dNXc      ...;xXKd.      ,xXK:   .:xXNd.         oNNNK:   .cONXNXc   ...'kWO' .:O0c.    .',..dNXc      ...;xXKd.      ,xXK:   .:xXNd.     'dk:.;Xx. 'xOc.                     ,00,.lKX:   .oXWXx,   lNNo       '0Wo           .     '0Nl                      ;KNNx.              :NO.      'o0NO,. :NO.      'o0NO,.
+ :XWo.,ONKKWk;.          .xWx.    cKo.,dkl.    .OWo            cN0,  .'cdONXo.         cXNd.               .xNK:     ':oOkc.      ;doxNk..:dxdkNK;          ;KNNNKc .dNNOo0Wd.      lNXl;k0o. .,cod0Xx. .xNK:     ':oOkc.      ;doxNk..:dxdkNK;      .'.  ,Kk,cOd.          ...''    .....;00; ',     .oNNNXd'.lNNl       :XX:    ..            oWO.                     :0dkNl              cN0,  .'cdONXo.   cN0,  .'cdONXo.
+ oWX:  .dNNWx'.    ''    ;KNc     .oKc         ,KN:            .xX0ddddod0O;         ':oKWK;.....           .kWK; .:xkko,       'xx,.oN0xkd:..xWd.          .xNK0NXloXWX:.xWO'      ;KNX0xlcoool:,lX0'   .kWK; .:xkko,       'xx,.oN0xkd:..xWd.           '0XOd,...',:cllllclkXKd ,oOOOOOOkKWKc.     ...xNNXNKoxNNl      .dWO.  .xKKOkxddxxkkkxc:NK,                     l0;;KK;    ...      .xX0ddddod0O;     .xX0ddddod0O;
+.xW0'   .lKKc.    .kXd. .dWk.      .xKl.       :N0'      cOxc.   .''...c0x.         .xKXNNNKkkkko.           'ON0xkd;.         .ONd:dKNk;.   :X0,            cNKldNNNNXo  cNX:     .lXNNOdoc,.    oNo     'ON0xkd;.         .ONd:dKNk;.   :X0,           .cKN0dllllll:;'...'oKk;.d0x;'..';:ld00,    'kl '0WOoONNNNx.     '0Wl   ,0WKocokKX0xo:,.,KN:        ..           o0,.xN0dooool;cOxc.   .''...c0x.cOxc.   .''...c0x.
+.kWO.     ..       ;KNl ;KX:        .xXx.      dWx.      .lkXKd,     .dKo.            ..:0WXl..             .;ONW0;            .oOOxxXX:    'OXc             '0Nl.oKKd:.  ,0Wd.   .xKXWK:        .OX;    .;ONW0;            .oOOxxXX:    'OXc           .cxONk;..        .:00c.'kO,          ..    .x0'  cXNc'dNNNK,     lNK,   .kWXkddl:'.     .OWl       ;0Kl.    ..';l0XkxxONKl..   .lkXKd,     .dKo. .lkXKd,     .dKo.
+.OWO.              '0Wd.kNo.        .,kNO;    .kWo          'o0Xx,  .dXo                 lNWd.           .;oOXKKNXd,...          .  ,0K,   .dNo.             .xWx. ..     .xW0'   .,'oWX;        ;XO. .;oOXKKNXd,...          .  ,0K,   .dNo.              ;Xk.         'xXx. .oNk'                l0:   .xWO'.lKNNd.   .OWd. .:dKWXl.          .kWo       .dNXl   xOOkxOXd'. .kNd.       'o0Xx,  .dXo      'o0Xx,  .dXo
+.kW0'             .oNX:lNO.  .':loododxkOk;   .ONl            .oXXl.lNx.                 .kWK;          .d0Okkxk0NNKOOOkdl:'.       ,KK,  .oXd.              .dW0,         cNNc  ..  :XNl        oNo .d0Okkxk0NNKOOOkdl:'.       ,KK,  .oXd.               .OK,        :KK:    .c0Kd,            .dO;     :XNc  :KWX:   :XXl:dkdl0WK,           .kWk;''''.. .dNXc ....  lO,    'ONd.        .oXXl.lNx.        .oXXl.lNx.
+ lNNl            ,kX0:,0Ndcodddlc,'..         .kWo              :KXOX0,                   :XWx.          ..     ,0WO;',;cdk00xc,.   ;KK, .dKl.             kX00NX;         'OWk.cKXkcoKWd.      '0X;  ..     ,0WO;',;cdk00xc,.   ;KK, .dKl.                 dNc      .oXO'        .l0Xkl;'.....':dko.     .kWO.  cXWO' .kWX0x:. .dOl.           .xXOkkkOO00OxkXNXd'    .Ox.     'ONx.         :KXOX0,           :KXOX0,
+ .xNKc.     ..'cxKOc..xNXko;..                 cNO.              :KWXl                    .kWX:                 .o0l.      .;oOKOo;.,KNockk,               .l0NNX:          oNXc.;ok0XNNKo,..  'kXl.         .o0l.      .;oOKOo;.,KNockk,                   :Xx.    .xXx. ..,,,.   .:x0XXK00000xc.         cXNc  .dNXo.:XNk,     .               .........,:ldk0KO;    lK:       .kN0:         :KWXl             :KWXl
+  .cOKOxooodddddc'   .cc'                      .c0c              .xXd.                     'ol.                   .            ,oxo..dXKkc.                  .d0d.          '0WO'   .'o0O0KK0kxxd,             .            ,oxo..dXKkc.                    .l:.   .kWXxlllc:;'.      ..,,,,,'.            .OWx.  .''. ;o;.                                    ...    '0k.        .lx;         .xXd.             .xXd.
+     .,,;,,...                                   .'               .'                                                                  ..                       .             ,ol'      . ..',,..                                   ..                              ,oc;'.                                   .;'                                                       .;.                       .'                .'
+</pre>
+
+<br>
 <table>
     <thead>
         <tr>
